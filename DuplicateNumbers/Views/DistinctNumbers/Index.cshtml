@@ -1,9 +1,9 @@
 @model Dictionary<int, int>
 <body>
 <div>
-    @foreach (var test in Model)
+    @foreach (var (duplicateNumber, amount) in Model)
     {
-        <span>For number @test.Key, there were @test.Value duplicates.</span>
+        <span>For number @duplicateNumber, there were @amount duplicates.</span>
         <br/>
     }
     @if (!Model.Any())

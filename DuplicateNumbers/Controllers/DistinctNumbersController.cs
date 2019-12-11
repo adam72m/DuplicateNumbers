@@ -16,9 +16,9 @@ namespace Oodit.Controllers
 
         public IActionResult ReturnDuplicateNumbers(int[] numbers)
         {
-            var test = numbers.GroupBy(x => x).Where(x => x.Count() > 1).ToDictionary(x => x.Key, x => x.Count());
-            var i = numbers;
-            return View("Index", test);
+            var duplicateNumbersAndAmount = numbers.GroupBy(x => x).Where(x => x.Count() > 1).ToDictionary(x => x.Key, x => x.Count());
+            
+            return View("Index", duplicateNumbersAndAmount);
         }
     }
 }
