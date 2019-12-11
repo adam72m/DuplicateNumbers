@@ -1,0 +1,25 @@
+@model Dictionary<int, int>
+<body>
+<div>
+    @foreach (var test in Model)
+    {
+        <span>For number @test.Key, there were @test.Value duplicates.</span>
+        <br/>
+    }
+    @if (!Model.Any())
+    {
+        <span>No duplicates found</span>
+    }
+    <form asp-action="ReturnDuplicateNumbers" method="post">
+        <div id="inputs" class="form-group">
+            @for (var i = 0; i < 15;i++)
+            {
+                <input name="numbers"/><br/>
+            }
+
+        </div>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </form>
+
+</div>
+</body>
